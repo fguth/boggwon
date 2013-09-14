@@ -1,0 +1,26 @@
+header {
+  background: transparent;
+  height: 70px;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+
+  .boggwon {
+    float: left;
+    @include box-sizing(border-box);
+    padding: 16px 20px 14px;
+    border-right: 1px solid #fff;
+  }
+
+  .share {
+    float: right;
+    border-left: 1px solid #fff;
+
+    a {
+      @include box-sizing(border-box);
+      float: left;
+      width: 70px;
+      height: 70px;
+      text-align: center;
+    }
+  }
+}
