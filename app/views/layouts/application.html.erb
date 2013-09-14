@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>boogwon</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-</head>
-<body>
+  <head>
+    <title>boogwon</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
 
-<%= yield %>
+  <%= render "shared/header" %>
 
-</body>
+  <%= yield %>
+
+  <%= render "shared/footer" %>
+
+  </body>
 </html>
