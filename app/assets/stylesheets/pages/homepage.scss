@@ -1,3 +1,46 @@
-// Place all the styles related to the homepage controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.page {
+  width: 100%;
+  height: 500px;
+  background: url("temp.jpg") repeat-x 0 0;
+  padding: 140px 0 0;
+  @include box-sizing(border-box);
+
+  h1 {
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 70px;
+    letter-spacing: -3px;
+    color: #fff;
+    margin-bottom: 100px;
+  }
+}
+
+.raffle {
+  width: 100%;
+  height: 120px;
+  position: relative;
+  bottom: 0;
+  @include background(linear-gradient(top, $RED 0%, $RED 100%), linear-gradient(top, $SHADOW-RED 0%, $SHADOW-RED 100%));
+  background-size: 100% 80px, 100% 40px;
+  background-position: 0 0, 0 80px;
+  background-repeat: no-repeat, no-repeat;
+
+  .raffle-detail {
+    width: 100%;
+    height: 110px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: -30px;
+    background: transparent;
+    border-top: 1px solid #000;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      height: 110px;
+    }
+  }
+}

@@ -1,7 +1,14 @@
 body {
   @include size(100%);
-  background: #eee;
+  background: $RED;
   margin: 0;
   padding: 0;
+  color: #fff;
   font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.limiter {
+  width: 1080px;
+  margin: 0 auto;
 }
