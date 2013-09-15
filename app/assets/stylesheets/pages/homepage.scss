@@ -1,6 +1,5 @@
 .page {
-  width: 100%;
-  height: 500px;
+  @include size(100% 500px);
   background: url("temp.jpg") repeat-x 0 0;
   padding: 140px 0 0;
   @include box-sizing(border-box);
@@ -18,8 +17,7 @@
 }
 
 .raffle {
-  width: 100%;
-  height: 120px;
+  @include size(100% 120px);
   position: relative;
   bottom: 0;
   @include background(linear-gradient(top, $RED 0%, $RED 100%), linear-gradient(top, $SHADOW-RED 0%, $SHADOW-RED 100%));
@@ -28,8 +26,7 @@
   background-repeat: no-repeat, no-repeat;
 
   .raffle-detail {
-    width: 100%;
-    height: 110px;
+    @include size(100% 110px);
     padding: 0;
     margin: 0;
     position: relative;
@@ -38,8 +35,7 @@
 
     li {
       display: block;
-      width: 100%;
-      height: 110px;
+      @include size(100% 110px);
       position: absolute;
 
       &.centered { left: 0; }
@@ -48,14 +44,12 @@
     }
 
     .opened {
-      width: 500px;
-      height: 110px;
+      @include size(500px 110px);
       margin: 0 auto;
 
       .box {
-        width: 198px;
+        @include size(198px 100px);
         background: $SHADOW_BLUE;
-        height: 100px;
         margin: 10px 0 0;
         padding: 25px 0 0;
         @include box-sizing(border-box);
@@ -83,8 +77,7 @@
 
       .bet {
         float: left;
-        width: 100px;
-        height: 110px;
+        @include size(100px 110px);
         margin: 0 2px;
         background: $BLUE url('ui.svg') no-repeat 0 0;
         cursor: pointer;
@@ -112,8 +105,7 @@
   }
 
   .raffle-number {
-    width: 1080px;
-    height: 40px;
+    @include size(1080px 40px);
     margin: -30px auto 0;
     padding: 0;
     background: transparent;
@@ -122,50 +114,65 @@
     li {
       float: left;
       display: inline-block;
-      width: 120px;
-      height: 40px;
+      @include size(120px 40px);
       font-weight: bold;
       line-height: 38px;
+      font-size: 14px;
       color: $LIGHT-RED;
+      text-align: center;
 
       &.selected { color: #fff; }
     }
   }
 
-  .raffle-controls {
-    width: 1080px;
-    height: 220px;
-    margin: 0 auto;
+  .raffle-control {
+    float: left;
+    @include size(112px 220px);
+    background: url("ui.svg") no-repeat;
+    color: #fff;
+    text-decoration: none;
     position: relative;
-    display: block;
-    top: -170px;
+    @include transition (margin .2s ease-out .02s);
+    z-index: 10;
 
-    a {
-      float: left;
-      width: 112px;
-      height: 220px;
-      background: url("ui.svg") no-repeat;
-      color: #fff;
-      text-decoration: none;
-      position: relative;
-      @include transition (margin .2s ease-out .02s);
-      z-index: 20;
+    &.left {
+      margin-left: 5px;
+      left: 50%;
+      margin: -170px 0 0 -535px;
+      background-position: -100px 0;
+    }
 
-      &.nav-left {
-        margin-left: 5px;
-        background-position: -100px 0;
-      }
+    &.right {
+      float: right;
+      right: 50%;
+      margin: -170px -535px 0 0;
+      background-position: -212px 0;
+    }
 
-      &.nav-right {
-        float: right;
-        margin-right: 5px;
-        background-position: -212px 0;
-      }
+    &:hover {
+      @include transition (margin .1s ease-in .02s);
+      &.left { margin-left: -540px; } &.right { margin-right: -540px;}
+    }
+  }
 
-      &:hover {
-        margin: 0;
-        @include transition (margin .1s ease-in .02s);
-      }
+  .raffle-shadow {
+    float: left;
+    @include size(220px 40px);
+    background: #000;
+    position: relative;
+    margin-top: -40px;
+
+    &.left {
+      left: 50%;
+      margin-left: -540px;
+      @include background(linear-gradient(left,  rgba(166,36,57,1) 0%, rgba(166,36,57,1) 20%, rgba(166,36,57,0) 100%));
+    }
+
+    &.right {
+      float: right;
+      right: 50%;
+      margin-right: -540px;
+      @include background(linear-gradient(left,  rgba(166,36,57,0) 0%, rgba(166,36,57,1) 80%, rgba(166,36,57,1) 100%));
     }
   }
 }
