@@ -35,12 +35,80 @@
     position: relative;
     top: -30px;
     background: transparent;
-    border-top: 1px solid #000;
 
     li {
-      display: inline-block;
+      display: block;
       width: 100%;
       height: 110px;
+      position: absolute;
+
+      &.centered { left: 0; }
+      &.righted { left: 100%; }
+      &.leftted { right: 100%; }
+    }
+
+    .opened {
+      width: 500px;
+      height: 110px;
+      margin: 0 auto;
+
+      .box {
+        width: 198px;
+        background: $SHADOW_BLUE;
+        height: 100px;
+        margin: 10px 0 0;
+
+        &.date { float: left; }
+        &.prize { float: right; }
+      }
+
+      .bet {
+        float: left;
+        width: 100px;
+        height: 110px;
+        margin: 0 2px;
+        background: $BLUE url('ui.svg') no-repeat 0 0;
+        cursor: pointer;
+
+        &:after {
+          top: 100%;
+          border: solid transparent;
+          content: " ";
+          @include size(0);
+          position: absolute;
+          pointer-events: none;
+          border-color: rgba(136, 183, 213, 0);
+          border-top-color: $BLUE;
+          border-width: 10px;
+          left: 50%;
+          margin-left: -10px;
+        }
+
+        &:hover   { background-color: lighten($BLUE, 7%);
+          &:after { border-top-color: lighten($BLUE, 7%); }
+        }
+      }
+    }
+  }
+
+  .raffle-number {
+    width: 1080px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    top: -30px;
+
+    li {
+      float: left;
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      font-weight: bold;
+      line-height: 38px;
+      color: $LIGHT-RED;
+
+      &.selected { color: #fff; }
     }
   }
 }
