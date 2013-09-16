@@ -1,7 +1,8 @@
 footer {
-  background: #aaa;
+  background: transparent;
   height: 70px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid $SHADOW-RED;
   width: 100%;
   bottom: 0;
+  margin: 100px 0 0;
 }

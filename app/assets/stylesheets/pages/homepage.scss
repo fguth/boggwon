@@ -1,6 +1,6 @@
 .page {
   @include size(100% 500px);
-  background: url("temp.jpg") repeat-x 0 0;
+  background: url("blurred.jpg") repeat-x 0 0;
   padding: 140px 0 0;
   @include box-sizing(border-box);
 
