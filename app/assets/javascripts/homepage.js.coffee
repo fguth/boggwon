@@ -1,4 +1,3 @@
 jQuery ->
-  $(".bet").click ->
-    $(this).addClass("activated")
-    $("h1"). addClass("hidden")
+  $(".amount").focus ->
+    $('.bet, h1').addClass('step')

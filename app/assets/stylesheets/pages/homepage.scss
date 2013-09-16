@@ -15,9 +15,7 @@
     margin-bottom: 100px;
     @include transition (opacity .15s ease-out);
 
-    &.hidden {
-      opacity: 0;
-    }
+    &.step { opacity: 0; }
   }
 }
 
@@ -81,14 +79,13 @@
       }
 
       .bet {
-        float: left;
         @include size(100px 110px);
         margin: 0 2px;
         background: $BLUE url('ui.svg') no-repeat 0 0;
-        cursor: pointer;
         display: inline-block;
         z-index: 30;
         position: absolute;
+        @include transition (width .2s ease, margin .2s ease);
 
         &:after {
           top: 100%;
@@ -108,10 +105,9 @@
           &:after { border-top-color: lighten($BLUE, 7%); }
         }
 
-        .bet-input {
-          opacity: 0;
+        .amount {
           float: left;
-          width: 350px;
+          width: 100px;
           height: 110px;
           border: none;
           padding: 0;
@@ -121,33 +117,35 @@
           font-weight: 100;
           background: transparent;
           padding-left: 20px;
+          cursor: pointer;
+          @include transition (width .2s ease, margin .2s ease);
+
+          &:focus {
+            width: 350px;
+            cursor: text;
+          }
         }
 
-        &.activated {
-          position: absolute;
+        &.step {
           width: 500px;
           margin: 0 0 0 -198px;
           background-image: none;
           @include transition (width .2s ease, margin .2s ease);
-          cursor: default;
 
           &:hover   { background-color: $BLUE;
             &:after { border-top-color: $BLUE; }
           }
 
-          .bet-input {
-            opacity: 1;
-          }
-
-          .outer-text {
+          .caller {
             margin: -170px 0 0 -50px;
             opacity: 1;
+            pointer-events: auto;
             @include transition (opacity .15s ease-out .2s, margin .15s ease-out .2s);
           }
         }
       }
 
-      .outer-text {
+      .caller {
         width: 600px;
         position: absolute;
         margin: -160px 0 0 -50px;
