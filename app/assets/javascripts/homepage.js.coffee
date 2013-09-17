@@ -9,3 +9,5 @@ BOGGWON.homepage =
 
   changeStep: () ->
     $('.bet, h1').addClass('step')
+
+  $('.amount').number( true, 2 );
