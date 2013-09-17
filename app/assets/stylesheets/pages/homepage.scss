@@ -110,7 +110,6 @@
           width: 100px;
           height: 110px;
           border: none;
-          padding: 0;
           outline: none;
           @include box-sizing(border-box);
           font-size: 42px;
@@ -119,7 +118,7 @@
           font-weight: 100;
           color: #fff;
           background: transparent;
-          padding-left: 55px;
+          padding: 0 30px 0 55px;
           cursor: pointer;
           @include transition (width .2s ease, margin .2s ease);
           opacity: 0;
@@ -128,6 +127,10 @@
             color: rgba(255,255,255,.3);
             opacity: 0;
           }
+        }
+
+        .go {
+          opacity: 0;
         }
 
         &.step {
@@ -141,13 +144,28 @@
           }
 
           .amount {
-            width: 350px;
+            width: 330px;
             cursor: text;
             opacity: 1;
             background: transparent url("ui.svg") no-repeat 0 -220px;
             @include transition (width .2s ease, margin .2s ease, opacity .4s ease-in .2s);
 
             @include placeholder { opacity: 1; }
+          }
+
+          .go {
+            float: right;
+            width: 170px;
+            height: 110px;
+            line-height: 110px;
+            text-align: center;
+            color: #fff;
+            font-family: "Novecento";
+            text-decoration: none;
+            background: darken($BLUE,20%);
+            font-size: 14px;
+            opacity: 1;
+            @include transition (opacity .4s ease-in .2s);
           }
 
           .caller {
