@@ -1,3 +1,9 @@
+@include keyframes(Hsmall) {
+  0% { margin-top: 83px; }
+  50% { margin-top: 86px; }
+  100% { margin-top: 83px; }
+}
+
 .page {
   @include size(100% 500px);
   background: url("blurred.jpg") repeat-x 0 0;
@@ -22,6 +28,7 @@
       background: url("ui.svg") no-repeat 0 -110px;
       left: 50%;
       margin: 80px 0 0 -50px;
+      @include animation(Hsmall .4s ease infinite);
     }
 
     &.step { opacity: 0; }
@@ -64,7 +71,7 @@
         @include size(228px 100px);
         background: $SHADOW_BLUE;
         margin: 10px 0 0;
-        padding: 33px 0 0;
+        padding: 20px 0 0;
         @include box-sizing(border-box);
 
         h2 {
@@ -73,12 +80,12 @@
           text-align: center;
           letter-spacing: -3px;
           line-height: 30px;
-          margin: 0 0 8px;
+          margin: 0;
           padding: 0;
         }
 
         p {
-          margin: 0;
+          margin: 0 0 8px;
           text-align: center;
           font-family: "Novecento", sans-serif;
           font-size: 11px;
