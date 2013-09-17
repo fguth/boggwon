@@ -145,7 +145,7 @@
           }
 
           .amount {
-            width: 330px;
+            width: 350px;
             cursor: text;
             opacity: 1;
             background: transparent url("ui.svg") no-repeat 0 -220px;
@@ -156,17 +156,19 @@
 
           .go {
             float: right;
-            width: 170px;
+            width: 150px;
             height: 110px;
-            line-height: 110px;
+            line-height: 100px;
             text-align: center;
             color: #fff;
-            font-family: "Novecento";
+            font-weight: 100;
+            font-size: 40px;
+            letter-spacing: -3px;
             text-decoration: none;
             background: darken($BLUE,20%);
-            font-size: 14px;
-            opacity: 1;
             @include transition (opacity .4s ease-in .2s);
+
+            &:hover { background: darken($BLUE,25%); }
           }
 
           .caller {
