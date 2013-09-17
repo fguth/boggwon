@@ -21,17 +21,18 @@
     margin-bottom: 100px;
     @include transition (opacity .15s ease-out);
 
-    small {
-      position: absolute;
-      width: 100px;
-      height: 30px;
-      background: url("ui.svg") no-repeat 0 -110px;
-      left: 50%;
-      margin: 80px 0 0 -50px;
-      @include animation(Hsmall .4s ease infinite);
-    }
-
     &.step { opacity: 0; }
+  }
+
+  .arrow {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background: url("ui.svg") no-repeat 0 -110px;
+    left: 50%;
+    top: 205px;
+    margin: 0 0 0 -50px;
+    @include animation(Hsmall .4s ease infinite);
   }
 }
 
@@ -194,7 +195,7 @@
           }
 
           .caller {
-            margin: -230px 0 0 0;
+            margin: -225px 0 0 0;
             opacity: 1;
             pointer-events: auto;
             @include transition (opacity .15s ease-in .2s, margin .15s ease-in .2s);
@@ -219,7 +220,7 @@
         }
 
         p {
-          font-size: 16px;
+          font-size: 20px;
           line-height: 12px;
           text-align: center;
           font-weight: normal;
