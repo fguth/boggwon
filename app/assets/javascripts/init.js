@@ -1,7 +1,11 @@
 BOGGWON = {
   common: {
     init: function() {
-      console.log('App started')
+      BOGGWON.common.setNumber();
+    },
+
+    setNumber: function() {
+      $('.amount').number(true, 2);
     }
   }
 };
