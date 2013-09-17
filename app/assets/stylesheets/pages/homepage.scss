@@ -216,18 +216,26 @@
     padding: 0;
     background: transparent;
     position: relative;
+    overflow: hidden;
 
-    li {
-      float: left;
-      display: inline-block;
-      @include size(120px 40px);
-      font-weight: bold;
-      line-height: 38px;
-      font-size: 14px;
-      color: $LIGHT-RED;
-      text-align: center;
+    ul {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      left: 480px;
 
-      &.selected { color: #fff; }
+      li {
+        float: left;
+        display: block;
+        @include size(120px 40px);
+        font-weight: bold;
+        line-height: 38px;
+        font-size: 14px;
+        color: $LIGHT-RED;
+        text-align: center;
+
+        &.selected { color: #fff; }
+      }
     }
   }
 
