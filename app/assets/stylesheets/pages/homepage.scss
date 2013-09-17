@@ -15,6 +15,15 @@
     margin-bottom: 100px;
     @include transition (opacity .15s ease-out);
 
+    small {
+      position: absolute;
+      width: 100px;
+      height: 30px;
+      background: url("ui.svg") no-repeat 0 -110px;
+      left: 50%;
+      margin: 80px 0 0 -50px;
+    }
+
     &.step { opacity: 0; }
   }
 }
@@ -172,7 +181,9 @@
             color: darken($BLUE,40%);
             @include transition (opacity .4s ease-in .2s, background .2s ease);
 
-            &:hover { background: darken($BLUE,12%); @include transition (background .2s ease); }
+            &:hover {
+              background: darken($BLUE,15%);
+              @include transition (background .2s ease); }
           }
 
           .caller {
