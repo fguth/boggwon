@@ -186,11 +186,11 @@
             letter-spacing: -3px;
             text-decoration: none;
             color: darken($BLUE,40%);
-            @include transition (opacity .4s ease-in .2s, background .2s ease);
+            @include transition (opacity .4s ease-in .2s, font-size .1s ease-out);
 
             &:hover {
-              background: darken($BLUE,15%);
-              @include transition (background .2s ease); }
+              font-size: 50px;
+              @include transition (font-size .1s ease-out); }
           }
 
           .caller {
