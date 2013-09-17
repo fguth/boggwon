@@ -48,18 +48,18 @@
     }
 
     .opened {
-      @include size(500px 110px);
+      @include size(560px 110px);
       margin: 0 auto;
 
       .box {
-        @include size(198px 100px);
+        @include size(228px 100px);
         background: $SHADOW_BLUE;
         margin: 10px 0 0;
-        padding: 25px 0 0;
+        padding: 33px 0 0;
         @include box-sizing(border-box);
 
         h2 {
-          font-size: 35px;
+          font-size: 40px;
           font-weight: 100;
           text-align: center;
           letter-spacing: -3px;
@@ -139,8 +139,8 @@
         }
 
         &.step {
-          width: 500px;
-          margin: 0 0 0 -198px;
+          width: 560px;
+          margin: 0 0 0 -228px;
           background-image: none;
           @include transition (width .2s ease, margin .2s ease);
 
@@ -176,10 +176,10 @@
           }
 
           .caller {
-            margin: -170px 0 0 -50px;
+            margin: -230px 0 0 -50px;
             opacity: 1;
             pointer-events: auto;
-            @include transition (opacity .15s ease-out .2s, margin .15s ease-out .2s);
+            @include transition (opacity .15s ease-in .2s, margin .15s ease-in .2s);
           }
         }
       }
@@ -187,7 +187,7 @@
       .caller {
         width: 600px;
         position: absolute;
-        margin: -160px 0 0 -50px;
+        margin: -210px 0 0 -50px;
         opacity: 0;
         pointer-events: none;
 
