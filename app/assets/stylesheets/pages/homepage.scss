@@ -149,7 +149,7 @@
           }
 
           .amount {
-            width: 350px;
+            width: 400px;
             cursor: text;
             opacity: 1;
             background: transparent url("ui.svg") no-repeat 0 -220px;
@@ -160,7 +160,7 @@
 
           .go {
             float: right;
-            width: 150px;
+            width: 160px;
             height: 110px;
             line-height: 100px;
             text-align: center;
@@ -169,14 +169,14 @@
             font-size: 40px;
             letter-spacing: -3px;
             text-decoration: none;
-            background: darken($BLUE,20%);
-            @include transition (opacity .4s ease-in .2s);
+            color: darken($BLUE,40%);
+            @include transition (opacity .4s ease-in .2s, background .2s ease);
 
-            &:hover { background: darken($BLUE,25%); }
+            &:hover { background: darken($BLUE,12%); @include transition (background .2s ease); }
           }
 
           .caller {
-            margin: -230px 0 0 -50px;
+            margin: -230px 0 0 0;
             opacity: 1;
             pointer-events: auto;
             @include transition (opacity .15s ease-in .2s, margin .15s ease-in .2s);
@@ -185,9 +185,9 @@
       }
 
       .caller {
-        width: 600px;
+        width: 560px;
         position: absolute;
-        margin: -210px 0 0 -50px;
+        margin: -210px 0 0 0;
         opacity: 0;
         pointer-events: none;
 
