@@ -40,10 +40,11 @@
       display: block;
       @include size(100% 110px);
       position: absolute;
+      @include transition(left .35s ease 0, right .35s ease 0);
 
       &.centered { left: 0; }
       &.righted { left: 100%; }
-      &.leftted { right: 100%; }
+      &.lefted { left: -100%; }
     }
 
     .opened {
