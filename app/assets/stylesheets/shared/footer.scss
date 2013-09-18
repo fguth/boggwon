@@ -3,6 +3,61 @@ footer {
   height: 70px;
   border-top: 1px solid $SHADOW-RED;
   width: 100%;
+  position: absolute;
   bottom: 0;
   margin: 100px 0 0;
+
+  .boggwon {
+    float: left;
+    height: 70px;
+    padding: 23px 20px 23px;
+    @include box-sizing(border-box);
+    border-right: 1px solid $SHADOW-RED;
+  }
+
+  .paypal {
+    padding: 27px 20px;
+    @include box-sizing(border-box);
+    float: right;
+    font-family: "Novecento";
+    color: $LIGHT-RED;
+    font-size: 11px;
+    letter-spacing: -1px;
+    border-left: 1px solid $SHADOW-RED;
+
+    span { float: left; margin: 1px 5px 0 0; }
+    img { float: right; }
+  }
+
+  .links {
+    float: left;
+    padding: 22px 20px;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-top: 5px;
+      font-family: "Novecento";
+      letter-spacing: -1px;
+      color: $LIGHT-RED;
+      font-size: 11px;
+      @include box-sizing(border-box);
+      padding-left: 13px;
+      margin-left: 8px;
+      background: url("li-styler.svg") no-repeat 0 4px;
+
+      &:first-child {
+        padding: 0;
+        margin: 0;
+        background: none;
+      }
+
+      a {
+        color: $LIGHT-RED;
+        text-decoration: none;
+
+        &:hover { color: #fff; }
+      }
+    }
+  }
 }
