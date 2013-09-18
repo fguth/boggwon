@@ -68,34 +68,6 @@
       @include size(560px 110px);
       margin: 0 auto;
 
-      .box {
-        @include size(228px 100px);
-        background: $SHADOW_BLUE;
-        margin: 10px 0 0;
-        padding: 20px 0 0;
-        @include box-sizing(border-box);
-
-        h2 {
-          font-size: 40px;
-          font-weight: 100;
-          text-align: center;
-          letter-spacing: -3px;
-          line-height: 30px;
-          margin: 0;
-          padding: 0;
-        }
-
-        p {
-          margin: 0 0 8px;
-          text-align: center;
-          font-family: "Novecento", sans-serif;
-          font-size: 11px;
-        }
-
-        &.date { float: left; }
-        &.prize { float: right; }
-      }
-
       .bet {
         @include size(100px 110px);
         margin: 0 2px;
@@ -187,6 +159,7 @@
             letter-spacing: -3px;
             text-decoration: none;
             color: darken($BLUE,40%);
+            line-height: 103px;
             @include transition (opacity .4s ease-in .2s, font-size .1s ease-out);
 
             &:hover {
@@ -226,6 +199,62 @@
           font-weight: normal;
         }
       }
+    }
+
+    .closed {
+      @include size(688px 110px);
+      margin: 0 auto;
+
+      .box {
+        &.date { float: left; }
+        &.winner { float: right; }
+        &.prize {
+          float: left;
+          margin: 10px 2px 0;
+
+          &:after {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            @include size(0);
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(136, 183, 213, 0);
+            border-top-color: $SHADOW-BLUE;
+            border-width: 10px;
+            left: 50%;
+            margin-left: -10px;
+          }
+        }
+      }
+    }
+
+    .box {
+      @include size(228px 100px);
+      background: $SHADOW_BLUE;
+      margin: 10px 0 0;
+      padding: 20px 0 0;
+      @include box-sizing(border-box);
+
+      h2 {
+        font-size: 40px;
+        font-weight: 100;
+        text-align: center;
+        letter-spacing: -3px;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        margin: 0 0 8px;
+        text-align: center;
+        font-family: "Novecento", sans-serif;
+        font-size: 11px;
+      }
+
+      &.date { float: left; }
+      &.prize { float: right; }
     }
   }
 
