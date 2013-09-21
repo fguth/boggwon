@@ -26,9 +26,9 @@ header {
       text-decoration: none;
       background: url("ui.svg") no-repeat -325px -2px;
 
-      &.facebook { background-position: -465px 0;}
-      &.twitter  { background-position: -395px 0 ;}
-      &.google   { background-position: -325px -70px;}
+      &.facebook { background-position: -465px 0; &:hover { background-color: #4c66a4;}}
+      &.twitter  { background-position: -395px 0 ; &:hover { background-color: #22a5dd;}}
+      &.google   { background-position: -325px -70px; &:hover { background-color: #333;}}
     }
   }
 
