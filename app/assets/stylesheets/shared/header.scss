@@ -25,6 +25,15 @@ header {
       text-align: center;
       text-decoration: none;
       background: url("ui.svg") no-repeat -325px -2px;
+
+      &.facebook { background-position: -465px 0;}
+      &.twitter  { background-position: -395px 0 ;}
+      &.google   { background-position: -325px -70px;}
     }
+  }
+
+  .websites {
+    float: left;
+    width: 210px;
   }
 }
