@@ -16,6 +16,7 @@ header {
   .share {
     float: right;
     border-left: 1px solid #fff;
+    @include transition (border .25s ease-out);
 
     .websites {
       float: right;
@@ -23,7 +24,10 @@ header {
       position: relative;
       margin-right: -210px;
       opacity: 1;
-      @include transition (margin .15s ease-out);
+      background: rgba(25,10,25,.5);
+      @include transition (all .2s ease-out .2s);
+
+      a { opacity: .8; }
     }
 
     a {
@@ -35,25 +39,28 @@ header {
       text-decoration: none;
       background: url("ui.svg") no-repeat -325px -2px;
 
-      &:hover { background-color: $RED; }
-
       &.facebook { background-position: -465px 0; }
       &.twitter  { background-position: -395px 0; }
       &.google   { background-position: -325px -70px; }
+
+      &.trigger { @include transition (opacity 1s ease-out .25s); }
     }
 
     &.active {
       border-left: none;
 
-      .trigger {
+      .trigger, .trigger:hover {
+        background-color: rgba(0,0,0,0);
+        opacity: .1;
         pointer-events: none;
-        opacity: .2;
       }
 
       .websites {
-        border-left: 1px solid #fff;
         opacity: 1;
         margin: 0;
+        border-left: 1px solid #fff;
+
+        a:hover { opacity: 1; }
       }
     }
   }
