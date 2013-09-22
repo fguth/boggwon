@@ -25,7 +25,7 @@ header {
       margin-right: -210px;
       opacity: 1;
       background: rgba(25,10,25,.5);
-      @include transition (all .2s ease-out .2s);
+      @include transition (all .2s ease-out);
 
       a { opacity: .8; }
     }
