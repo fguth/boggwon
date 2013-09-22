@@ -17,6 +17,15 @@ header {
     float: right;
     border-left: 1px solid #fff;
 
+    .websites {
+      float: right;
+      width: 210px;
+      position: relative;
+      margin-right: -210px;
+      opacity: 1;
+      @include transition (margin .15s ease-out);
+    }
+
     a {
       @include box-sizing(border-box);
       float: left;
@@ -26,14 +35,26 @@ header {
       text-decoration: none;
       background: url("ui.svg") no-repeat -325px -2px;
 
-      &.facebook { background-position: -465px 0; &:hover { background-color: #4c66a4;}}
-      &.twitter  { background-position: -395px 0 ; &:hover { background-color: #22a5dd;}}
-      &.google   { background-position: -325px -70px; &:hover { background-color: #333;}}
-    }
-  }
+      &:hover { background-color: $RED; }
 
-  .websites {
-    float: left;
-    width: 210px;
+      &.facebook { background-position: -465px 0; }
+      &.twitter  { background-position: -395px 0; }
+      &.google   { background-position: -325px -70px; }
+    }
+
+    &.active {
+      border-left: none;
+
+      .trigger {
+        pointer-events: none;
+        opacity: .2;
+      }
+
+      .websites {
+        border-left: 1px solid #fff;
+        opacity: 1;
+        margin: 0;
+      }
+    }
   }
 }

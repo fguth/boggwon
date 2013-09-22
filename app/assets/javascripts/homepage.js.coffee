@@ -15,3 +15,7 @@ BOGGWON.homepage =
 
   revealGo: () ->
     $('.go').addClass('revealed')
+
+jQuery ->
+  $(".trigger").click ->
+    $(".share").addClass("active")
