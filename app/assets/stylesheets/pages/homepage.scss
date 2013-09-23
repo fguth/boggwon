@@ -202,7 +202,7 @@
     }
 
     .closed {
-      @include size(688px 110px);
+      @include size(628px 110px);
       margin: 0 auto;
 
       .box {
@@ -210,7 +210,7 @@
         &.winner { float: right; }
         &.prize {
           float: left;
-          margin: 10px 2px 0;
+          margin: 15px 2px 0;
 
           &:after {
             top: 100%;
@@ -233,7 +233,7 @@
       @include size(208px 95px);
       background: $SHADOW_BLUE;
       margin: 15px 0 0;
-      padding: 20px 0 0;
+      padding: 15px 0 0;
       @include box-sizing(border-box);
 
       h2 {
@@ -247,7 +247,7 @@
       }
 
       p {
-        margin: 0 0 8px;
+        margin: 0 0 10px;
         text-align: center;
         font-family: "Novecento", sans-serif;
         font-size: 11px;
