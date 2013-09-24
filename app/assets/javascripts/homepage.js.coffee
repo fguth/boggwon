@@ -10,12 +10,15 @@ BOGGWON.homepage =
     $('.amount').on 'keyup', (e) ->
       BOGGWON.homepage.revealGo()
 
+    $('.trigger').on 'click', (e) ->
+      e.preventDefault()
+      BOGGWON.homepage.openShareOptions()
+
   changeStep: () ->
     $('.bet, h1').addClass('step')
 
   revealGo: () ->
     $('.go').addClass('revealed')
 
-jQuery ->
-  $(".trigger").click ->
-    $(".share").addClass("active")
+  openShareOptions: () ->
+    $('.share').addClass('active')

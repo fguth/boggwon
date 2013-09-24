@@ -57,11 +57,27 @@
       display: block;
       @include size(100% 110px);
       position: absolute;
-      @include transition(left .35s ease 0, right .35s ease 0);
+      @include transition(left .35s ease 0, right .35s ease 0, height 0 ease 0, width 0 ease 0);
 
-      &.centered { left: 0; }
-      &.righted { left: 100%; }
-      &.lefted { left: -100%; }
+      &.centered {
+        left: 0;
+      }
+      
+      &.righted {
+        left: 100%;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        @include transition(left .35s ease 0, right .35s ease 0, height 0 ease .35s, width 0 ease .35s);
+      }
+
+      &.lefted {
+        left: -100%;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        @include transition(left .35s ease 0, right .35s ease 0, height 0 ease .35s, width 0 ease .35s);
+      }
     }
 
     .opened {

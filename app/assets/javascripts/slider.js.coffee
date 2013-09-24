@@ -11,18 +11,18 @@ BOGGWON.slider =
 
   bind: () ->
     BOGGWON.slider.leftArrow.on 'click', (e) ->
+      e.preventDefault()
       BOGGWON.slider.moveToLeft(e)
       BOGGWON.slider.moveNumbers(true)
       BOGGWON.slider.updateArrows()
     
     BOGGWON.slider.rightArrow.on 'click', (e) ->
+      e.preventDefault()
       BOGGWON.slider.moveToRight(e)
       BOGGWON.slider.moveNumbers(true)
       BOGGWON.slider.updateArrows()
 
   moveToLeft: (e) ->
-    e.preventDefault()
-
     if $('.lefted').length > 0
       BOGGWON.slider.raffleDetail.find('.centered')
         .addClass('righted')
@@ -32,8 +32,6 @@ BOGGWON.slider =
         .addClass('centered')
 
   moveToRight: (e) ->
-    e.preventDefault()
-
     if $('.righted').length > 0
       BOGGWON.slider.raffleDetail.find('.centered')
         .addClass('lefted')
