@@ -12,6 +12,5 @@
 //
 //= require jquery
 // = require jquery_ujs
-//= require jquery.number.min
 //= require init
 //= require_tree .

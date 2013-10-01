@@ -4,11 +4,8 @@ BOGGWON.homepage =
     BOGGWON.slider.init()
 
   bind: () ->
-    $('.amount').on 'focus', (e) ->
+    $('.amount').on 'click', (e) ->
       BOGGWON.homepage.changeStep()
-
-    $('.amount').on 'keyup', (e) ->
-      BOGGWON.homepage.revealGo()
 
     $('.trigger').on 'click', (e) ->
       e.preventDefault()
