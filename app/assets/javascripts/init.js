@@ -1,3 +1,9 @@
+BOGGWON = {
+  common: {
+    init: function() {
+    }
+  }
+};
 
 UTIL = {
   exec: function(controller, action) {
