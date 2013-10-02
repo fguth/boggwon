@@ -90,7 +90,10 @@
         {{else}}
           <ul>
             {{#each orders}}
-              <li>{{order.id}} - {{order.transaction.sender.name}}</li>
+              <li>
+                {{order.id}}<br>
+                {{order.transaction.sender.name}}<br>
+                {{order.total_native.currency_iso}} {{order.total_native.floated}}</li>
             {{/each}}
           </ul>
         {{/if}}

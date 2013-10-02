@@ -30,6 +30,7 @@ BOGGWON.transactions =
         do (i) ->
           get_transaction(orders.orders[i].order).done (transaction) ->
             orders.orders[i].order.transaction = transaction.transaction
+            orders.orders[i].order.total_native.floated = (orders.orders[i].order.total_native.cents / 100).toFixed(2)
             callback(orders) if i is orders.total_count - 1
         i++
 
