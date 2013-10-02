@@ -39,7 +39,7 @@
                 <p>the higher your bet, the higher your chances.</p>
               </div>
               <div class="amount">
-                fooo
+                <a class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7" data-button-style="custom_large" data-custom="RAFFLE1" href="https://coinbase.com/checkouts/99bc5a1cca84b99efe6be90c249545b7">Pay With Bitcoin</a>
               </div>
             </div>
             <div class="prize box">
@@ -83,19 +83,18 @@
 
     </div>
 
-    <div class="boggs limiter">
-      <h2>last boggs details</h2>
-
-      <ul class="">
-        <li>
-          <div>bogg</div>
-          <div>date</div>
-          <div>total bets</div>
-          <div>final prize</div>
-          <div>status</div>
-          <div>transaction info</div>
-        </li>
-      </ul>
+    <div class="transactions">
+      <script id="transactions" type="text/x-handlebars-template">
+        {{#if message}}
+          <p>{{message}}</p>
+        {{else}}
+          <ul>
+            {{#each orders}}
+              <li>{{id}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </script>
     </div>
 
 </section>
