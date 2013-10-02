@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-// = require jquery_ujs
+//= require jquery_ujs
+//= require handlebars
+//= require handlebars-compiler
 //= require init
 //= require_tree .
