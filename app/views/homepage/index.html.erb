@@ -90,7 +90,7 @@
         {{else}}
           <ul>
             {{#each orders}}
-              <li>{{id}}</li>
+              <li>{{order.id}} - {{order.transaction.sender.name}}</li>
             {{/each}}
           </ul>
         {{/if}}
