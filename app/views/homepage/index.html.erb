@@ -85,8 +85,8 @@
 
     <div class="transactions">
       <script id="transactions" type="text/x-handlebars-template">
-        {{#if message}}
-          <p>{{message}}</p>
+        {{#if error}}
+          <p>{{error}}</p>
         {{else}}
           <ul>
             {{#each orders}}

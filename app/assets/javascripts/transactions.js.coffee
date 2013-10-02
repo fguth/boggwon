@@ -1,35 +1,43 @@
 BOGGWON.transactions =
   init: () ->
-    BOGGWON.transactions.load()
+    BOGGWON.transactions.update()
 
-  load: () ->
-    $.ajax BOGGWON.api_url + 'orders?api_key=' + BOGGWON.api_key,
-      type: 'GET'
-      dataType: 'jsonp'
-      error: (jqxhr, text_status, error_thrown) ->
-        BOGGWON.transactions.render(error_thrown, false)
-      success: (data, text_status, jqxhr) ->
-        BOGGWON.transactions.get_transaction_info(data)
+  load: (page, callback) ->
+    do get_orders = (page, callback) ->
+      $.ajax
+        url: BOGGWON.api_url + 'orders?api_key=' + BOGGWON.api_key + '&page=' + page
+        type: 'GET'
+        dataType: 'jsonp'
+        success: (orders) ->
+          get_transactions(orders)
+        error: ->
+          BOGGWON.transactions.render()
 
-  get_transaction_info: (data) ->
-    orders = data
-    i = 0
-    while i < data.total_count
-      do (i) ->
-        $.ajax BOGGWON.api_url + "transactions/" + orders.orders[i].order.transaction.id + "?api_key=" + BOGGWON.api_key,
-          type: "GET"
-          dataType: "jsonp"
-          error: (jqxhr, text_status, error_thrown) ->
-            BOGGWON.transactions.render error_thrown, false
-          success: (data, text_status, jqxhr) ->
-            orders.orders[i].order.transaction = data.transaction
-            BOGGWON.transactions.render(orders, true) if i is orders.total_count - 1
-      i++
+    get_transactions = (orders) ->
+      i = 0
+      while i < orders.total_count
+        do (i) ->
+          get_transaction(orders.orders[i].order).done (transaction) ->
+            orders.orders[i].order.transaction = transaction.transaction
+            callback(orders) if i is orders.total_count - 1
+        i++
 
-  render: (data, success) ->
-    if success is true
-      if data.total_count is 0
-        data.message = 'No bets yet'
+    get_transaction = (order) ->
+      $.ajax
+        url: BOGGWON.api_url + 'transactions/' + order.transaction.id + '?api_key=' + BOGGWON.api_key,
+        type: 'GET'
+        dataType: 'jsonp'
+        error: ->
+          BOGGWON.transactions.render()
+
+  render: (orders) ->
+    if orders
+      if orders.total_count is 0
+        orders.error = 'No bets yet'
     else
-      data.message = 'We got an error'
-    $('.transactions').handlebars($('#transactions'), data)
+      orders.error = 'We got an error'
+    $('.transactions').handlebars($('#transactions'), orders)
+
+  update: () ->
+    BOGGWON.transactions.load 1, (orders) ->
+      BOGGWON.transactions.render(orders)
