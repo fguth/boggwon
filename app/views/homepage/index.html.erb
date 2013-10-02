@@ -39,7 +39,7 @@
                 <p>the higher your bet, the higher your chances.</p>
               </div>
               <div class="amount">
-                fooo
+                <a class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7" data-button-style="custom_large" data-custom="RAFFLE1" href="https://coinbase.com/checkouts/99bc5a1cca84b99efe6be90c249545b7">Pay With Bitcoin</a>
               </div>
             </div>
             <div class="prize box">
@@ -81,6 +81,20 @@
       <span class="raffle-shadow left">&nbsp;</span>
       <span class="raffle-shadow right">&nbsp;</span>
 
+    </div>
+
+    <div class="transactions">
+      <script id="transactions" type="text/x-handlebars-template">
+        {{#if message}}
+          <p>{{message}}</p>
+        {{else}}
+          <ul>
+            {{#each orders}}
+              <li>{{id}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </script>
     </div>
 
 </section>
