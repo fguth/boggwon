@@ -9,9 +9,22 @@ BOGGWON.transactions =
         type: 'GET'
         dataType: 'jsonp'
         success: (orders) ->
-          get_transactions(orders)
+          filter_orders(orders)
         error: ->
           BOGGWON.transactions.render()
+
+    filter_orders = (orders) ->
+      raffle_id = $('iframe').attr('id').slice(23)
+      all_orders = orders
+      orders = []
+      i = 0
+      while i < all_orders.total_count
+        do (i) ->
+          if all_orders.orders[i].order.button.id is raffle_id
+            orders.push(all_orders.orders[i])
+            all_orders.orders = orders
+          get_transactions(all_orders) if i is all_orders.total_count - 1
+        i++ 
 
     get_transactions = (orders) ->
       i = 0
