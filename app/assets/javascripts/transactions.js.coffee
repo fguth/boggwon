@@ -14,16 +14,14 @@ BOGGWON.transactions =
           BOGGWON.transactions.render()
 
     filter_orders = (orders) ->
-      raffle_id = $('iframe').attr('id').slice(23)
-      all_orders = orders
-      orders = []
+      raffle_id = $('.raffle_detail').find('.centered').data('code')
+      filtered_orders = orders
       i = 0
-      while i < all_orders.total_count
+      while i < orders.total_count
         do (i) ->
-          if all_orders.orders[i].order.button.id is raffle_id
-            orders.push(all_orders.orders[i])
-            all_orders.orders = orders
-          get_transactions(all_orders) if i is all_orders.total_count - 1
+          if orders.orders[i].order.button.id is raffle_id
+            filtered_orders.orders.push(orders.orders[i])
+          get_transactions(filtered_orders) if i is orders.total_count - 1
         i++ 
 
     get_transactions = (orders) ->
@@ -53,4 +51,5 @@ BOGGWON.transactions =
 
   update: () ->
     BOGGWON.transactions.load 1, (orders) ->
-      BOGGWON.transactions.render(orders)
+      if orders.orders.length > 0
+        BOGGWON.transactions.render(orders)
