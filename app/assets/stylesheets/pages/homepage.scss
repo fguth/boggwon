@@ -40,7 +40,7 @@
   @include size(100% 120px);
   position: relative;
   bottom: 0;
-  @include background(linear-gradient(top, $RED 0%, $RED 100%), linear-gradient(top, $SHADOW-RED 0%, $SHADOW-RED 100%));
+  @include background(linear-gradient(top, $PURPLE-1 0%, $PURPLE-1 100%), linear-gradient(top, $PURPLE-2 0%, $PURPLE-2 100%));
   background-size: 100% 80px, 100% 40px;
   background-position: 0 0, 0 80px;
   background-repeat: no-repeat, no-repeat;
@@ -86,7 +86,7 @@
       .bet {
         @include size(100px 110px);
         margin: 0;
-        background: $BLUE url('ui.svg') no-repeat 0 0;
+        background: $GREEN-1 url('ui.svg') no-repeat 0 0;
         display: inline-block;
         z-index: 30;
         position: absolute;
@@ -100,14 +100,10 @@
           position: absolute;
           pointer-events: none;
           border-color: rgba(136, 183, 213, 0);
-          border-top-color: $BLUE;
+          border-top-color: $GREEN-1;
           border-width: 10px;
           left: 50%;
           margin-left: -10px;
-        }
-
-        &:hover   { background-color: lighten($BLUE, 7%);
-          &:after { border-top-color: lighten($BLUE, 7%); }
         }
 
         .amount {
@@ -148,8 +144,8 @@
           background-image: none;
           @include transition (width .2s ease, margin .2s ease);
 
-          &:hover   { background-color: $BLUE;
-            &:after { border-top-color: $BLUE; }
+          &:hover   { background-color: $GREEN-1;
+            &:after { border-top-color: $GREEN-1; }
           }
 
           .amount {
@@ -170,7 +166,7 @@
             font-size: 40px;
             letter-spacing: -3px;
             text-decoration: none;
-            color: darken($BLUE,40%);
+            color: darken($GREEN-1,40%);
             line-height: 105px;
             @include transition (opacity .4s ease-in .2s, font-size .1s ease-out);
 
@@ -232,7 +228,6 @@
             position: absolute;
             pointer-events: none;
             border-color: rgba(136, 183, 213, 0);
-            border-top-color: $SHADOW-BLUE;
             border-width: 10px;
             left: 50%;
             margin-left: -10px;
@@ -243,7 +238,6 @@
 
     .box {
       @include size(210px 95px);
-      background: $SHADOW_BLUE;
       margin: 15px 0 0;
       padding: 24px 0 0;
       @include box-sizing(border-box);
@@ -291,7 +285,7 @@
         font-weight: bold;
         line-height: 38px;
         font-size: 14px;
-        color: $LIGHT-RED;
+        color: $PURPLE-3;
         text-align: center;
 
         &.selected { color: #fff; }

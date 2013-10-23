@@ -1,7 +1,6 @@
 footer {
   background: transparent;
   height: 70px;
-  border-top: 1px solid $SHADOW-RED;
   width: 100%;
   margin: 100px 0 0;
 
@@ -10,7 +9,6 @@ footer {
     height: 70px;
     padding: 23px 20px 23px;
     @include box-sizing(border-box);
-    border-right: 1px solid $SHADOW-RED;
   }
 
   .paypal {
@@ -18,10 +16,9 @@ footer {
     @include box-sizing(border-box);
     float: right;
     font-family: "Novecento";
-    color: $LIGHT-RED;
+    color: $PURPLE-3;
     font-size: 11px;
     letter-spacing: -1px;
-    border-left: 1px solid $SHADOW-RED;
 
     span { float: left; margin: 1px 5px 0 0; }
     img { float: right; }
@@ -37,7 +34,7 @@ footer {
       margin-top: 5px;
       font-family: "Novecento";
       letter-spacing: -1px;
-      color: $LIGHT-RED;
+      color: $PURPLE-3;
       font-size: 11px;
       @include box-sizing(border-box);
       padding-left: 13px;
@@ -51,7 +48,6 @@ footer {
       }
 
       a {
-        color: $LIGHT-RED;
         text-decoration: none;
 
         &:hover { color: #fff; }
