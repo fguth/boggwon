@@ -10,12 +10,7 @@ body {
   background: $PURPLE-1;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: $WHITE;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
-}
-
-.limiter {
-  width: 1080px;
-  margin: 0 auto;
 }

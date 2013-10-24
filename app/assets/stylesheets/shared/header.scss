@@ -1,68 +1,34 @@
-header {
-  background: transparent;
-  height: 70px;
-  border-bottom: 1px solid #fff;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
+@include keyframes(Hsmall) {
+  0% { background-position: 0 -110px; }
+  50% { background-position: 0 -107px; }
+  100% { background-position: 0 -110px; }
+}
 
-  .boggwon {
-    float: left;
-    @include box-sizing(border-box);
-    padding: 16px 20px 14px;
-    border-right: 1px solid #fff;
+header {
+  background: url('bg.jpg') repeat-x -700px 0;
+  height: 500px;
+  width: 100%;
+  top: 0;
+  text-align: center;
+  padding: 30px 0 0;
+  @include box-sizing(border-box);
+
+  h1 {
+    text-align: center;
+    margin: 75px auto;
+    font-weight: 100;
+    font-size: 50px;
+    line-height: 70px;
+    letter-spacing: -3px;
+    @include transition (opacity .15s ease-out);
   }
 
-  .share {
-    float: right;
-    border-left: 1px solid #fff;
-    @include transition (border .25s ease-out);
-
-    .websites {
-      float: right;
-      width: 210px;
-      position: relative;
-      margin-right: -210px;
-      opacity: 1;
-      background: rgba(25,10,25,.5);
-      @include transition (all .15s ease-out);
-
-      a { opacity: .8; }
-    }
-
-    a {
-      @include box-sizing(border-box);
-      float: left;
-      width: 70px;
-      height: 70px;
-      text-align: center;
-      text-decoration: none;
-      background: url("ui.svg") no-repeat -325px -2px;
-
-      &.facebook { background-position: -465px 0; }
-      &.twitter  { background-position: -395px 0; }
-      &.google   { background-position: -325px -70px; }
-
-      &.trigger { @include transition (opacity 1s ease-out .25s); }
-    }
-
-    &.active {
-      border-left: none;
-
-      .trigger, .trigger:hover {
-        background-color: rgba(0,0,0,0);
-        opacity: .1;
-        pointer-events: none;
-      }
-
-      .websites {
-        opacity: 1;
-        margin: 0;
-        border-left: 1px solid #fff;
-
-        a:hover { opacity: 1; }
-      }
-    }
+  .arrow {
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: -63px auto 0;
+    background: url("ui.svg") no-repeat 0 -110px;
+    @include animation(Hsmall .4s ease-out infinite);
   }
 }

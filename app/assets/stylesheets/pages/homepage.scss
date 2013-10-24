@@ -1,56 +1,15 @@
-@include keyframes(Hsmall) {
-  0% { margin-top: 83px; }
-  50% { margin-top: 86px; }
-  100% { margin-top: 83px; }
-}
-
-.page {
-  @include size(100% 500px);
-  background: url("blurred.jpg") repeat-x 0 0;
-  padding: 140px 0 0;
-  @include box-sizing(border-box);
-
-  h1 {
-    text-align: center;
-    margin: 0 auto;
-    font-weight: 100;
-    font-size: 50px;
-    line-height: 70px;
-    letter-spacing: -3px;
-    color: #fff;
-    margin-bottom: 100px;
-    @include transition (opacity .15s ease-out);
-
-    &.step { opacity: 0; }
-  }
-
-  .arrow {
-    position: absolute;
-    width: 100px;
-    height: 30px;
-    background: url("ui.svg") no-repeat 0 -110px;
-    left: 50%;
-    top: 205px;
-    margin: 0 0 0 -50px;
-    @include animation(Hsmall .4s ease infinite);
-  }
-}
-
 .raffle {
-  @include size(100% 120px);
-  position: relative;
-  bottom: 0;
-  @include background(linear-gradient(top, $PURPLE-1 0%, $PURPLE-1 100%), linear-gradient(top, $PURPLE-2 0%, $PURPLE-2 100%));
-  background-size: 100% 80px, 100% 40px;
-  background-position: 0 0, 0 80px;
+  @include size(100% 150px);
+  margin: -110px 0 0;
+  @include background(linear-gradient(top, transparent 0%, transparent 100%), linear-gradient(top, $PURPLE-2 0%, $PURPLE-2 100%));
+  background-size: 100% 110px, 100% 40px;
+  background-position: 0 0, 0 110px;
   background-repeat: no-repeat, no-repeat;
 
   .raffle-detail {
     @include size(100% 110px);
     padding: 0;
     margin: 0;
-    position: relative;
-    top: -30px;
     background: transparent;
 
     li {
@@ -59,17 +18,9 @@
       position: absolute;
       @include transition(left .35s ease 0, right .35s ease 0, height 0 ease 0, width 0 ease 0);
 
-      &.centered {
-        left: 0;
-      }
-
-      &.righted {
-        left: 100%;
-      }
-
-      &.lefted {
-        left: -100%;
-      }
+      &.centered { left: 0; }
+      &.righted { left: 100%; }
+      &.lefted { left: -100%; }
 
       &.righted, &.lefted {
         height: 0;
@@ -84,7 +35,7 @@
       margin: 0 auto;
 
       .bet {
-        @include size(100px 110px);
+        @include size(120px 110px);
         margin: 0;
         background: $GREEN-1 url('ui.svg') no-repeat 0 0;
         display: inline-block;
@@ -105,168 +56,102 @@
           left: 50%;
           margin-left: -10px;
         }
-
-        .amount {
-          float: left;
-          width: 140px;
-          height: 110px;
-          border: none;
-          outline: none;
-          @include box-sizing(border-box);
-          font-size: 42px;
-          line-height: 58px;
-          letter-spacing: -2px;
-          font-weight: 100;
-          color: #fff;
-          background: transparent;
-          padding: 0 30px 0 55px;
-          cursor: pointer;
-          @include transition (width .2s ease, margin .2s ease);
-          opacity: 0;
-
-          @include placeholder {
-            color: rgba(255,255,255,.3);
-            opacity: 0;
-          }
-        }
-
-        .go {
-          opacity: 0;
-
-          &.revealed {
-            opacity: 1;
-          }
-        }
-
-        &.step {
-          width: 520px;
-          margin: 0 0 0 -210px;
-          background-image: none;
-          @include transition (width .2s ease, margin .2s ease);
-
-          &:hover   { background-color: $GREEN-1;
-            &:after { border-top-color: $GREEN-1; }
-          }
-
-          .amount {
-            width: 400px;
-            opacity: 1;
-            //background: transparent url("ui.svg") no-repeat 0 -220px;
-            @include transition (width .2s ease, margin .2s ease, opacity .4s ease-in .2s);
-          }
-
-          .go {
-            float: right;
-            width: 120px;
-            height: 110px;
-            line-height: 100px;
-            text-align: center;
-            color: #fff;
-            font-weight: 100;
-            font-size: 40px;
-            letter-spacing: -3px;
-            text-decoration: none;
-            color: darken($GREEN-1,40%);
-            line-height: 105px;
-            @include transition (opacity .4s ease-in .2s, font-size .1s ease-out);
-
-            &:hover {
-              font-size: 50px;
-              @include transition (font-size .1s ease-out); }
-          }
-
-          .caller {
-            margin: -225px 0 0 0;
-            opacity: 1;
-            pointer-events: auto;
-            @include transition (opacity .15s ease-in .2s, margin .15s ease-in .2s);
-          }
-        }
-      }
-
-      .caller {
-        width: 520px;
-        position: absolute;
-        margin: -210px 0 0 0;
-        opacity: 0;
-        pointer-events: none;
-
-        h3 {
-          font-size: 50px;
-          line-height: 45px;
-          font-weight: 100;
-          letter-spacing: -3px;
-          text-align: center;
-          margin-bottom: 25px;
-        }
-
-        p {
-          font-size: 20px;
-          line-height: 12px;
-          text-align: center;
-          font-weight: normal;
-        }
       }
     }
 
     .closed {
-      @include size(628px 110px);
+      @include size(520px 110px);
       margin: 0 auto;
-
-      .box {
-        &.date { float: left; }
-        &.winner { float: right; }
-        &.prize {
-          float: left;
-          margin: 15px 0 0;
-
-          &:after {
-            top: 100%;
-            border: solid transparent;
-            content: " ";
-            @include size(0);
-            position: absolute;
-            pointer-events: none;
-            border-color: rgba(136, 183, 213, 0);
-            border-width: 10px;
-            left: 50%;
-            margin-left: -10px;
-          }
-        }
-      }
     }
 
-    .box {
-      @include size(210px 95px);
-      margin: 15px 0 0;
-      padding: 24px 0 0;
+    .detailer {
+      @include size(200px 110px);
+      margin: 0;
+      padding: 0;
       @include box-sizing(border-box);
 
+      &:after {
+        position: relative;
+        display: block;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        @include size(200px 90px);
+        content: " ";
+        margin-top: -85px;
+      }
+
+      &:before {
+        @include size(0 90px);
+        position: absolute;
+        display: block;
+        content: " ";
+        border-top: 1px solid transparent;
+        border-bottom: 0 solid transparent;
+        opacity: .2;
+        z-index: 2;
+      }
+
+      &.lefty {
+        float: left;
+        &:after {
+          border-left: 208px solid $GREEN-2;
+          border-right: 0 solid transparent;
+          @include transform(skew(-10deg));
+        }
+
+        &:before {
+          border-left: 10px solid $GREEN-3;
+          border-right: 0 solid transparent;
+          @include transform(skew(5deg));
+          margin: 19px 0 0 195px;
+        }
+      }
+
+      &.righty {
+        float: right;
+        &:after {
+          border-right: 208px solid $GREEN-2;
+          border-left: 0 solid transparent;
+          @include transform(skew(10deg));
+          margin-left: -208px;
+        }
+
+        &:before {
+          border-right: 10px solid $GREEN-3;
+          border-left: 0 solid transparent;
+          @include transform(skew(-5deg));
+          margin: 19px 0 0 -5px;
+        }
+      }
+
+      h2, p {
+        z-index: 2;
+        position: relative;
+      }
+
       h2 {
-        font-size: 24px;
-        font-weight: 400;
+        font-size: 36px;
+        font-weight: 300;
         text-align: center;
-        letter-spacing: -1px;
+        letter-spacing: -2px;
         line-height: 30px;
-        margin: 0;
+        margin: 40px 0 0;
         padding: 0;
       }
 
       p {
-        margin: 0 0 5px;
+        margin: 10px 0 0;
         text-align: center;
         font-family: "Novecento", sans-serif;
-        font-size: 13px;
+        font-size: 12px;
+        color: $GREEN-3;
       }
-
-      &.date { float: left; }
-      &.prize { float: right; }
     }
   }
 
   .raffle-number {
     @include size(1080px 40px);
-    margin: -30px auto 0;
+    margin: 0 auto;
     padding: 0;
     background: transparent;
     position: relative;
@@ -297,7 +182,7 @@
     float: left;
     @include size(112px 220px);
     background: url("ui.svg") no-repeat;
-    color: #fff;
+    color: $WHITE;
     text-decoration: none;
     position: relative;
     @include transition (margin .2s ease-out .02s);
@@ -306,20 +191,20 @@
     &.left {
       margin-left: 5px;
       left: 50%;
-      margin: -170px 0 0 -535px;
+      margin: -185px 0 0 -475px;
       background-position: -100px 0;
     }
 
     &.right {
       float: right;
       right: 50%;
-      margin: -170px -535px 0 0;
+      margin: -170px -475px 0 0;
       background-position: -212px 0;
     }
 
     &:hover {
       @include transition (margin .1s ease-in .02s);
-      &.left { margin-left: -540px; } &.right { margin-right: -540px;}
+      &.left { margin-left: -480px; } &.right { margin-right: -480px;}
     }
   }
 
@@ -332,15 +217,15 @@
 
     &.left {
       left: 50%;
-      margin-left: -540px;
-      @include background(linear-gradient(left,  rgba(166,36,57,1) 0%, rgba(166,36,57,1) 20%, rgba(166,36,57,0) 100%));
+      margin-left: -480px;
+      @include background(linear-gradient(left,  rgba(31,19,26,1) 0%, rgba(31,19,26,1) 20%, rgba(31,19,26,0) 100%));
     }
 
     &.right {
       float: right;
       right: 50%;
-      margin-right: -540px;
-      @include background(linear-gradient(left,  rgba(166,36,57,0) 0%, rgba(166,36,57,1) 80%, rgba(166,36,57,1) 100%));
+      margin-right: -480px;
+      @include background(linear-gradient(left,  rgba(31,19,26,0) 0%, rgba(31,19,26,1) 80%, rgba(31,19,26,1) 100%));
     }
   }
 }
