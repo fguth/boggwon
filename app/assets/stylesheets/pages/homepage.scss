@@ -41,7 +41,22 @@
         display: inline-block;
         z-index: 30;
         position: absolute;
-        @include transition (width .2s ease, margin .2s ease);
+        text-align: center;
+        font-family: "Novecento", sans-serif;
+        @include transition(background-color .35s ease);
+        font-size: 12px;
+        color: $GREEN-3;
+        text-decoration: none;
+        @include box-sizing(border-box);
+        padding: 80px 0 0;
+
+        &:hover {
+          background-size: 500%;
+          background-position: -5px -3px;
+          background-color: lighten($GREEN-1, 5%);
+
+          &:after { border-top-color: lighten($GREEN-1, 5%); }
+        }
 
         &:after {
           top: 100%;
@@ -192,14 +207,14 @@
       margin-left: 5px;
       left: 50%;
       margin: -185px 0 0 -475px;
-      background-position: -100px 0;
+      background-position: -120px 0;
     }
 
     &.right {
       float: right;
       right: 50%;
       margin: -170px -475px 0 0;
-      background-position: -212px 0;
+      background-position: -232px 0;
     }
 
     &:hover {
