@@ -2,21 +2,21 @@ BOGGWON.homepage =
   init: () ->
     BOGGWON.homepage.bind()
     BOGGWON.slider.init()
-    BOGGWON.transactions.init()
+    BOGGWON.list.init()
 
   bind: () ->
     $('.amount').on 'click', (e) ->
-      BOGGWON.homepage.change_step()
+      BOGGWON.homepage.changeStep()
 
     $('.trigger').on 'click', (e) ->
       e.preventDefault()
-      BOGGWON.homepage.open_share_options()
+      BOGGWON.homepage.openShareOptions()
 
-  change_step: () ->
+  changeStep: () ->
     $('.bet, h1').addClass('step')
 
-  reveal_go: () ->
+  revealGo: () ->
     $('.go').addClass('revealed')
 
-  open_share_options: () ->
+  openShareOptions: () ->
     $('.share').addClass('active')

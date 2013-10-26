@@ -1,69 +1,67 @@
 BOGGWON.slider =
   init: () ->
-    @left_arrow = $('.raffle-control.left')
-    @right_arrow = $('.raffle-control.right')
-    @raffle_detail = $('.raffle-detail')
-    @raffle_number = $('.raffle-number')
+    @leftArrow = $('.raffle-control.left')
+    @rightArrow = $('.raffle-control.right')
+    @raffleDetail = $('.raffle-detail')
+    @raffleNumber = $('.raffle-number')
 
-    BOGGWON.slider.update_arrows()
-    BOGGWON.slider.move_numbers()
+    BOGGWON.slider.updateArrows()
+    BOGGWON.slider.moveNumbers()
     BOGGWON.slider.bind()
 
   bind: () ->
-    BOGGWON.slider.left_arrow.on 'click', (e) ->
+    BOGGWON.slider.leftArrow.on 'click', (e) ->
       e.preventDefault()
-      BOGGWON.slider.move_to_left(e)
-      BOGGWON.slider.move_numbers(true)
-      BOGGWON.slider.update_arrows()
-      BOGGWON.transactions.update()
+      BOGGWON.slider.moveToLeft(e)
+      BOGGWON.slider.moveNumbers(true)
+      BOGGWON.slider.updateArrows()
     
-    BOGGWON.slider.right_arrow.on 'click', (e) ->
+    BOGGWON.slider.rightArrow.on 'click', (e) ->
       e.preventDefault()
-      BOGGWON.slider.move_to_right(e)
-      BOGGWON.slider.move_numbers(true)
-      BOGGWON.slider.update_arrows()
-      BOGGWON.transactions.update()
+      BOGGWON.slider.moveToRight(e)
+      BOGGWON.slider.moveNumbers(true)
+      BOGGWON.slider.updateArrows()
 
-  move_to_left: (e) ->
+  moveToLeft: (e) ->
     if $('.lefted').length > 0
-      BOGGWON.slider.raffle_detail.find('.centered')
+      BOGGWON.slider.raffleDetail.find('.centered')
         .addClass('righted')
         .removeClass('centered')
         .prev('.lefted')
         .removeClass('lefted')
         .addClass('centered')
 
-  move_to_right: (e) ->
+  moveToRight: (e) ->
     if $('.righted').length > 0
-      BOGGWON.slider.raffle_detail.find('.centered')
+      BOGGWON.slider.raffleDetail.find('.centered')
         .addClass('lefted')
         .removeClass('centered')
         .next('.righted')
         .removeClass('righted')
         .addClass('centered')
 
-  move_numbers: (animate) ->
-    panels = BOGGWON.slider.raffle_detail.find('li')
+  moveNumbers: (animate) ->
+    panels = BOGGWON.slider.raffleDetail.find('li')
     index = panels.index($('.centered'))
 
     if !animate
-      BOGGWON.slider.raffle_number.find('ul').css({left: 480 - (index * 120)})
+      BOGGWON.slider.raffleNumber.find('ul').css({left: 480 - (index * 120)})
     else
-      BOGGWON.slider.raffle_number.find('ul').animate({left: 480 - (index * 120)}, 350)
+      BOGGWON.slider.raffleNumber.find('ul').animate({left: 480 - (index * 120)}, 350)
 
-  update_arrows: () ->
+  updateArrows: () ->
     if $('.lefted').length > 0
-      BOGGWON.slider.enable_arrow(BOGGWON.slider.left_arrow)
+      BOGGWON.slider.enableArrow(BOGGWON.slider.leftArrow)
     else
-      BOGGWON.slider.disable_arrow(BOGGWON.slider.left_arrow)
+      BOGGWON.slider.disableArrow(BOGGWON.slider.leftArrow)
 
     if $('.righted').length > 0
-      BOGGWON.slider.enable_arrow(BOGGWON.slider.right_arrow)
+      BOGGWON.slider.enableArrow(BOGGWON.slider.rightArrow)
     else
-      BOGGWON.slider.disable_arrow(BOGGWON.slider.right_arrow)
+      BOGGWON.slider.disableArrow(BOGGWON.slider.rightArrow)
 
-  disable_arrow: (arrow) ->
+  disableArrow: (arrow) ->
     arrow.addClass('disabled')
 
-  enable_arrow: (arrow) ->
+  enableArrow: (arrow) ->
     arrow.removeClass('disabled')

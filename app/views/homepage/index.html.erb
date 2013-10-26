@@ -68,6 +68,7 @@
 
 </section>
 
+<<<<<<< HEAD
 <section class="how-it-works">
   <div class="step">
      <h2>bets are gathered<br>to the daily jar.</h2>
@@ -99,3 +100,25 @@
         {{/if}}
       </script>
     </div>
+=======
+<div class="list">
+  <script id="list" type="text/x-handlebars-template">
+    {{#if error}}
+      <p>{{error}}</p>
+    {{else}}
+      <ul>
+        {{#each orders}}
+          <li>
+            time: {{formatDate order.created_at "short"}}<br>
+            order id: {{order.id}}<br>
+            address: {{order.receive_address}}<br>
+            sender: {{order.transaction.transaction.sender.name}}<br>
+            value: {{order.total_native.currency_iso}} {{order.total_native.floated}}<br>
+            value: {{order.total_btc.currency_iso}} {{order.total_btc.floated}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </script>
+</div>
+>>>>>>> c4d80cf1d53f9e5b0d3f60e1c02027de16208fda
