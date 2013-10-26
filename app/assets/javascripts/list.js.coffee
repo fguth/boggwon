@@ -1,6 +1,6 @@
 BOGGWON.list =
   init: () ->
-    BOGGWON.orders.find().done (result) ->
+    BOGGWON.orders.findAll().done (result) ->
       i = 0
       len = result.orders.length
       while i < len

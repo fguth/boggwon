@@ -1,5 +1,5 @@
 BOGGWON.orders =
-  find: (page) ->
+  findAll: (page) ->
     $.ajax
       url: BOGGWON.api_url + 'orders?api_key=' + BOGGWON.api_key + '&page=' + page
       type: 'GET'
