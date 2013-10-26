@@ -53,6 +53,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25)
+    momentjs-rails (2.2.1)
+      railties (>= 3.1)
     multi_json (1.8.0)
     pg (0.15.1)
     polyglot (0.3.3)
@@ -109,6 +111,7 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 3.2.1)
   jquery-rails
+  momentjs-rails
   pg
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)

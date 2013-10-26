@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require handlebars
 //= require handlebars-compiler
+//= require moment
 //= require init
 //= require_tree .

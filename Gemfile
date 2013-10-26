@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.14'
 gem 'bourbon'
 gem 'jquery-rails'
+gem 'momentjs-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

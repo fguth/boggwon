@@ -76,10 +76,12 @@
       <ul>
         {{#each orders}}
           <li>
-            {{order.id}}<br>
-            {{order.transaction.transaction.sender.name}}<br>
-            {{order.total_native.currency_iso}} {{order.total_native.floated}}<br>
-            {{order.total_btc.currency_iso}} {{order.total_btc.floated}}
+            time: {{formatDate order.created_at "short"}}<br>
+            order id: {{order.id}}<br>
+            address: {{order.receive_address}}<br>
+            sender: {{order.transaction.transaction.sender.name}}<br>
+            value: {{order.total_native.currency_iso}} {{order.total_native.floated}}<br>
+            value: {{order.total_btc.currency_iso}} {{order.total_btc.floated}}
           </li>
         {{/each}}
       </ul>
