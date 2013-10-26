@@ -15,14 +15,12 @@ BOGGWON.slider =
       BOGGWON.slider.move_to_left(e)
       BOGGWON.slider.move_numbers(true)
       BOGGWON.slider.update_arrows()
-      BOGGWON.transactions.update()
     
     BOGGWON.slider.right_arrow.on 'click', (e) ->
       e.preventDefault()
       BOGGWON.slider.move_to_right(e)
       BOGGWON.slider.move_numbers(true)
       BOGGWON.slider.update_arrows()
-      BOGGWON.transactions.update()
 
   move_to_left: (e) ->
     if $('.lefted').length > 0

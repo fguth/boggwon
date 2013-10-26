@@ -68,19 +68,21 @@
 
 </section>
 
-    <div class="transactions">
-      <script id="transactions" type="text/x-handlebars-template">
-        {{#if error}}
-          <p>{{error}}</p>
-        {{else}}
-          <ul>
-            {{#each orders}}
-              <li>
-                {{order.id}}<br>
-                {{order.transaction.sender.name}}<br>
-                {{order.total_native.currency_iso}} {{order.total_native.floated}}</li>
-            {{/each}}
-          </ul>
-        {{/if}}
-      </script>
-    </div>
+<div class="list">
+  <script id="list" type="text/x-handlebars-template">
+    {{#if error}}
+      <p>{{error}}</p>
+    {{else}}
+      <ul>
+        {{#each orders}}
+          <li>
+            {{order.id}}<br>
+            {{order.transaction.transaction.sender.name}}<br>
+            {{order.total_native.currency_iso}} {{order.total_native.floated}}<br>
+            {{order.total_btc.currency_iso}} {{order.total_btc.floated}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </script>
+</div>
