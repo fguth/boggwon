@@ -1,6 +1,7 @@
 <section class="raffle">
 
   <ul class="raffle-detail">
+
     <li class="lefted" data-code="997dwa7987d98wa7987d9w79329872332d">
       <div class="closed">
         <div class="date box">
@@ -19,7 +20,7 @@
     </li>
 
     <li class="centered" data-code="99bc5a1cca84b99efe6be90c249545b7">
-      <div class="opened">
+      <div class="running">
         <div class="detailer lefty">
           <h2>8.027 BTC</h2>
           <p>current prize</p>
@@ -34,17 +35,16 @@
 
     <li class="righted">
       <div class="closed">
-        <div class="date box">
-          <p>date</p>
+        <div class="detailer lefty">
           <h2>sep, 27</h2>
+          <p>date</p>
         </div>
-        <div class="prize box">
-          <p>prize</p>
+        <div class="bet">
+          foo
+        </div>
+        <div class="detailer righty">
           <h2>-</h2>
-        </div>
-        <div class="winner box">
           <p>winner</p>
-          <h2>-</h2>
         </div>
       </div>
     </li>
@@ -62,7 +62,6 @@
 
   <a href="" class="raffle-control left">&nbsp;</a>
   <a href="" class="raffle-control right">&nbsp;</a>
-
   <span class="raffle-shadow left">&nbsp;</span>
   <span class="raffle-shadow right">&nbsp;</span>
 
@@ -84,24 +83,8 @@
   </div>
 </section>
 
-    <div class="transactions">
-      <script id="transactions" type="text/x-handlebars-template">
-        {{#if error}}
-          <p>{{error}}</p>
-        {{else}}
-          <ul>
-            {{#each orders}}
-              <li>
-                {{order.id}}<br>
-                {{order.transaction.sender.name}}<br>
-                {{order.total_native.currency_iso}} {{order.total_native.floated}}</li>
-            {{/each}}
-          </ul>
-        {{/if}}
-      </script>
-    </div>
 
-<div class="list">
+<section class="list">
   <script id="list" type="text/x-handlebars-template">
     {{#if error}}
       <p>{{error}}</p>
@@ -120,5 +103,5 @@
       </ul>
     {{/if}}
   </script>
-</div>
+</section>
 

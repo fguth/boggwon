@@ -30,53 +30,53 @@
       }
     }
 
-    .opened {
+    .running {
       @include size(520px 110px);
       margin: 0 auto;
-
-      .bet {
-        @include size(120px 110px);
-        margin: 0;
-        background: $GREEN-1 url('ui.svg') no-repeat 0 0;
-        display: inline-block;
-        z-index: 30;
-        position: absolute;
-        text-align: center;
-        font-family: "Novecento", sans-serif;
-        @include transition(background-color .35s ease);
-        font-size: 12px;
-        color: $GREEN-3;
-        text-decoration: none;
-        @include box-sizing(border-box);
-        padding: 80px 0 0;
-
-        &:hover {
-          background-size: 500%;
-          background-position: -5px -3px;
-          background-color: lighten($GREEN-1, 5%);
-
-          &:after { border-top-color: lighten($GREEN-1, 5%); }
-        }
-
-        &:after {
-          top: 100%;
-          border: solid transparent;
-          content: " ";
-          @include size(0);
-          position: absolute;
-          pointer-events: none;
-          border-color: rgba(136, 183, 213, 0);
-          border-top-color: $GREEN-1;
-          border-width: 10px;
-          left: 50%;
-          margin-left: -10px;
-        }
-      }
     }
 
     .closed {
       @include size(520px 110px);
       margin: 0 auto;
+    }
+
+    .bet {
+      @include size(120px 110px);
+      margin: 0;
+      background: $GREEN-1 url('ui.svg') no-repeat 0 0;
+      display: inline-block;
+      z-index: 30;
+      position: absolute;
+      text-align: center;
+      font-family: "Novecento", sans-serif;
+      @include transition(background-color .35s ease);
+      font-size: 12px;
+      color: $GREEN-3;
+      text-decoration: none;
+      @include box-sizing(border-box);
+      padding: 80px 0 0;
+
+      &:hover {
+        background-size: 500%;
+        background-position: -5px -3px;
+        background-color: lighten($GREEN-1, 5%);
+
+        &:after { border-top-color: lighten($GREEN-1, 5%); }
+      }
+
+      &:after {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        @include size(0);
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: $GREEN-1;
+        border-width: 10px;
+        left: 50%;
+        margin-left: -10px;
+      }
     }
 
     .detailer {
