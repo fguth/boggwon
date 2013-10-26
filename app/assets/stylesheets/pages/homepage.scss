@@ -245,6 +245,33 @@
   }
 }
 
+.how-it-works {
+  @include size(950px 100px);
+  margin: 0 auto;
+  padding: 80px 0;
+
+  .step {
+    float: left;
+    width: 315px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    line-height: 40px;
+    margin: 0;
+  }
+
+  p {
+    color: $PURPLE-3;
+    font-size: 15px;
+    letter-spacing: 0;
+    margin: 12px 0 0;
+  }
+}
+
 .boggs {
   padding: 30px 0;
 
