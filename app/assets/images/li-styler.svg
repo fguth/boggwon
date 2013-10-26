@@ -3,5 +3,5 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="4px" height="4px" viewBox="0 0 4 4" enable-background="new 0 0 4 4" xml:space="preserve">
-<path fill-rule="evenodd" clip-rule="evenodd" fill="#A62439" d="M2,0c1.104,0,2,0.896,2,2S3.104,4,2,4S0,3.104,0,2S0.896,0,2,0z"/>
+<path fill="#7C132C" d="M2,0c1.104,0,2,0.896,2,2c0,1.104-0.896,2-2,2C0.896,4,0,3.104,0,2C0,0.896,0.896,0,2,0z"/>
 </svg>
