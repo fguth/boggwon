@@ -30,16 +30,6 @@
       }
     }
 
-    .running {
-      @include size(520px 110px);
-      margin: 0 auto;
-    }
-
-    .closed {
-      @include size(520px 110px);
-      margin: 0 auto;
-    }
-
     .bet {
       @include size(120px 110px);
       margin: 0;
@@ -162,6 +152,11 @@
         color: $GREEN-3;
       }
     }
+
+    .running, .closed {
+      @include size(520px 110px);
+      margin: 0 auto;
+    }
   }
 
   .raffle-number {
@@ -257,10 +252,10 @@
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    line-height: 40px;
+    line-height: 44px;
     margin: 0;
   }
 
