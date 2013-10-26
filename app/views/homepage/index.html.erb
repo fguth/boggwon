@@ -90,14 +90,20 @@
       <p>{{error}}</p>
     {{else}}
       <ul>
+        <li class="list-header">
+          <span class="span1">Transaction ID</span>
+          <span class="span2">Name</span>
+          <span class="span3">Value</span>
+          <span class="span4">Address</span>
+          <span class="span5">Details</span>
+        </li>
         {{#each orders}}
           <li>
-            time: {{formatDate order.created_at "short"}}<br>
-            order id: {{order.id}}<br>
-            address: {{order.receive_address}}<br>
-            sender: {{order.transaction.transaction.sender.name}}<br>
-            value: {{order.total_native.currency_iso}} {{order.total_native.floated}}<br>
-            value: {{order.total_btc.currency_iso}} {{order.total_btc.floated}}
+            <span class="span1">{{order.id}}</span>
+            <span class="span2">{{order.transaction.transaction.sender.name}}</span>
+            <span class="span3 bitcoin">{{order.total_btc.floated}} {{order.total_btc.currency_iso}}</span>
+            <span class="span4">{{order.receive_address}}</span>
+            <span class="span5 detail">39x74mfj</span>
           </li>
         {{/each}}
       </ul>
