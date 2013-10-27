@@ -5,7 +5,7 @@ BOGGWON.list =
       len = result.orders.length
       while i < len
         orders = result
-        j = i;
+        j = i
         transactionID = orders.orders[i].order.transaction.id
         BOGGWON.transactions.find(transactionID).done (result) ->
           orders.orders[j].order.transaction = result
