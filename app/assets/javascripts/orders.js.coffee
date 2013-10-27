@@ -9,12 +9,21 @@ BOGGWON.orders =
         window.total_count = result.total_count
         window.num_pages = result.num_pages
 
-  findByName: (orders, name) ->
-    order = []
+  findByCustom: (orders, custom) ->
+    order = {}
     i = 0
     len = orders.orders.length
     while i < len
-      order.push(orders.orders[i].order) if orders.orders[i].order.custom is name
+      order = orders.orders[i].order if orders.orders[i].order.custom is custom
+      i++
+    order
+
+  findByButton: (orders, buttonID) ->
+    order = {}
+    i = 0
+    len = orders.orders.length
+    while i < len
+      order = orders.orders[i].order if orders.orders[i].order.button.id is buttonID
       i++
     order
 
