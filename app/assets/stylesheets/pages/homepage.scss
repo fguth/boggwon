@@ -30,16 +30,6 @@
       }
     }
 
-    .running {
-      @include size(520px 110px);
-      margin: 0 auto;
-    }
-
-    .closed {
-      @include size(520px 110px);
-      margin: 0 auto;
-    }
-
     .bet {
       @include size(120px 110px);
       margin: 0;
@@ -162,6 +152,11 @@
         color: $GREEN-3;
       }
     }
+
+    .running, .closed {
+      @include size(520px 110px);
+      margin: 0 auto;
+    }
   }
 
   .raffle-number {
@@ -185,7 +180,7 @@
         font-weight: bold;
         line-height: 38px;
         font-size: 14px;
-        color: $PURPLE-3;
+        color: transparentize($PURPLE-3, .5);
         text-align: center;
 
         &.selected { color: #fff; }
@@ -246,7 +241,7 @@
 }
 
 .how-it-works {
-  @include size(950px 100px);
+  @include size(950px 120px);
   margin: 0 auto;
   padding: 80px 0;
 
@@ -257,10 +252,10 @@
   }
 
   h2 {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    line-height: 40px;
+    line-height: 44px;
     margin: 0;
   }
 
@@ -272,14 +267,58 @@
   }
 }
 
-.boggs {
-  padding: 30px 0;
+.list {
+  @include size(950px auto);
+  margin: 0 auto;
 
-  h2 {
-    text-align: center;
-    font-size: 26px;
-    margin: 0 0 30px;
-    line-height: 28px;
-    font-weight: 200;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    @include size(100% 40px);
+    display: block;
+    padding: 10px 20px;
+    @include box-sizing(border-box);
+    border-bottom: 1px solid transparentize($PURPLE-3, .75);
+
+    span {
+      float: left;
+      @include box-sizing(border-box);
+      padding: 0 20px 0 0;
+      font-size: 14px;
+      color: $PURPLE-3;
+      font-weight: 500;
+
+      &.span1 { width: 130px; }
+      &.span2 { width: 180px; }
+      &.span3 { width: 150px; }
+      &.span4 { width: 330px; }
+      &.span5 { width: 80px; text-align: right; padding: 0; }
+
+      &.bitcoin {
+        font-weight: bold;
+        color: $WHITE;
+      }
+
+      &.detail, &.detail a {
+        font-weight: bold;
+        color: $GREEN-1;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .list-header {
+    background: $RED;
+    border: none;
+    padding: 15px 20px;
+
+    span {
+      font-family: "Novecento", sans-serif;
+      font-size: 11px;
+      color: $WHITE;
+    }
   }
 }
