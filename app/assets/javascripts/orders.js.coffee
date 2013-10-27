@@ -3,7 +3,7 @@ BOGGWON.orders =
     $.ajax
       url: BOGGWON.api_url + 'orders?api_key=' + BOGGWON.api_key + '&page=' + page
       type: 'GET'
-      dataType: 'jsonp',
+      dataType: 'jsonp'
       success: (result) ->
         window.current_page = result.current_page
         window.total_count = result.total_count

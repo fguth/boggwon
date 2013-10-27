@@ -1,8 +1,20 @@
 {
-  buttons: [
+  "buttons": [
     {
-      custom: "RAFFLE1"
-      id: "99bc5a1cca84b99efe6be90c249545b7"
+      "custom": "RAFFLE1",
+      "id": "99bc5a1cca84b99efe6be90c249545b7"
+    },
+    {
+      "custom": "RAFFLE2",
+      "id": "23129837218937289137289137219372"
+    },
+    {
+      "custom": "RAFFLE3",
+      "id": "39821893271983298732981373928173"
+    },
+    {
+      "custom": "RAFFLE4",
+      "id": "djaoijowadijdoijaw09238120983902"
     }
   ]
 }
