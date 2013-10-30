@@ -5,6 +5,8 @@ BOGGWON.slider =
     @raffleDetail = $('.raffle-detail')
     @raffleNumber = $('.raffle-number')
 
+    BOGGWON.buttons.render BOGGWON.buttons.findAll()
+
     BOGGWON.orders.findAll().done (result) ->
       i = 0
       len = result.orders.length
@@ -46,7 +48,7 @@ BOGGWON.slider =
         orders.error = 'No raffles yet'
     else
       orders.error = 'We got an error'
-    $('.raffle-detail').handlebars($('#raffle'), orders)
+    $('.raffle-detail').handlebars($('#raffle-detail'), orders)
 
   moveToLeft: (e) ->
     if $('.lefted').length > 0

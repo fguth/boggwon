@@ -2,7 +2,7 @@
 
   <ul class="raffle-detail">
 
-    <script id="raffle" type="text/x-handlebars-template">
+    <script id="raffle-detail" type="text/x-handlebars-template">
       {{#each orders}}
         {{#compare order.status 'completed'}}
           <li class="lefted">
@@ -100,3 +100,16 @@
     {{/if}}
   </script>
 </section>
+
+<script id="button" type="text/x-handlebars-template">
+    {{#each buttons}}
+      <div class="button-{{id}}">
+        <a href="#" class="bet" title="Bet the amount of Bitcoins you want!" data-code="{{id}}">bet now</a>
+        <div class="coinbase-button" data-code="{{id}}" data-button-style="none"></div>
+      </div>
+    {{/each}}
+  </script>
+
+<div class="button-repository">
+  
+</div>

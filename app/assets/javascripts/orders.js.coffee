@@ -9,7 +9,7 @@ BOGGWON.orders =
         window.total_count = result.total_count
         window.num_pages = result.num_pages
 
-  findByCustom: (orders, custom) ->
+  filterByCustom: (orders, custom) ->
     order = {}
     i = 0
     len = orders.orders.length
@@ -18,7 +18,7 @@ BOGGWON.orders =
       i++
     order
 
-  findByButton: (orders, buttonID) ->
+  filterByButton: (orders, buttonID) ->
     order = {}
     i = 0
     len = orders.orders.length
