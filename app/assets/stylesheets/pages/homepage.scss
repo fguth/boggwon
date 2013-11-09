@@ -30,6 +30,21 @@
       }
     }
 
+    .clickable {
+      position: absolute;
+      z-index: 40;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+
+      iframe {
+        opacity: 0;
+        width: 120px !important;
+        height: 23px !important;
+        display: block;
+      }
+    }
+
     .bet {
       @include size(120px 110px);
       margin: 0;
@@ -45,6 +60,7 @@
       text-decoration: none;
       @include box-sizing(border-box);
       padding: 80px 0 0;
+      pointer-events: none;
 
       &:hover {
         background-size: 500%;

@@ -5,24 +5,9 @@ BOGGWON.slider =
     @raffleDetail = $('.raffle-detail')
     @raffleNumber = $('.raffle-number')
 
-    BOGGWON.buttons.render BOGGWON.buttons.findAll()
-
-    BOGGWON.orders.findAll().done (result) ->
-      i = 0
-      len = result.orders.length
-      while i < len
-        orders = result
-        j = i
-        transactionID = orders.orders[i].order.transaction.id
-        BOGGWON.transactions.find(transactionID).done (result) ->
-          orders.orders[j].order.transaction = result
-          BOGGWON.orders.addFloatedDolar(orders.orders[j].order)
-          BOGGWON.orders.addFloatedBitcoin(orders.orders[j].order)
-          BOGGWON.slider.render orders
-          BOGGWON.slider.updateArrows()
-          BOGGWON.slider.moveNumbers()
-          BOGGWON.slider.bind()
-        i++
+    BOGGWON.slider.updateArrows()
+    BOGGWON.slider.moveNumbers()
+    BOGGWON.slider.bind()
 
   bind: () ->
     BOGGWON.slider.leftArrow.on 'click', (e) ->
@@ -36,11 +21,6 @@ BOGGWON.slider =
       BOGGWON.slider.moveToRight(e)
       BOGGWON.slider.moveNumbers(true)
       BOGGWON.slider.updateArrows()
-
-    $('.bet').on 'click', (e) ->
-      e.preventDefault()
-      code = $(this).attr('id')
-      $(document).trigger('coinbase_show_modal', code)
 
   render: (orders) ->
     if orders

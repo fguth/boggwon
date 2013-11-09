@@ -1,54 +1,70 @@
 <section class="raffle">
-
   <ul class="raffle-detail">
+    <li class="lefted">
+      <div class="closed">
+        <div class="date box">
+          <p>date</p>
+          <h2>05/abr</h2>
+        </div>
+        <div class="prize box">
+          <p>prize</p>
+          <h2>USD 10</h2>
+        </div>
+        <div class="winner box">
+          <p>winner</p>
+          <h2>fguth08</h2>
+        </div>
+      </div>
+    </li>
 
-    <script id="raffle-detail" type="text/x-handlebars-template">
-      {{#each orders}}
-        {{#compare order.status 'completed'}}
-          <li class="lefted">
-            <div class="closed">
-              <div class="date box">
-                <p>date</p>
-                <h2>{{formatDate order.created_at "short"}}</h2>
-              </div>
-              <div class="prize box">
-                <p>prize</p>
-                <h2>USD {{order.total_native.floated}}</h2>
-              </div>
-              <div class="winner box">
-                <p>winner</p>
-                <h2>fguth08</h2>
-              </div>
-            </div>
-          </li>
-        {{/compare}}
+    <li class="lefted">
+      <div class="running">
+        <div class="detailer lefty">
+          <h2>USD 20</h2>
+          <p>current prize</p>
+        </div>
+        <a href="#" class="bet" title="Bet the amount of Bitcoins you want!">bet now</a>
+        <div class="clickable">
+          <div class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7"></div>
+          <div class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7"></div>
+          <div class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7"></div>
+          <div class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7"></div>
+          <div class="coinbase-button" data-code="99bc5a1cca84b99efe6be90c249545b7"></div>
+        </div>
+        <div class="detailer righty">
+          <h2>3h45m</h2>
+          <p>time remaining</p>
+        </div>
+      </div>
+    </li>
 
-        {{!#compare order.status '!=' 'completed'}}
-        {{#compare true true}}
-          <li class="centered">
-            <div class="running">
-              <div class="detailer lefty">
-                <h2>USD {{order.total_native.floated}}</h2>
-                <p>current prize</p>
-              </div>
-              <a href="#" class="bet" title="Bet the amount of Bitcoins you want!" data-code="{{order.button.id}}">bet now</a>
-              <div class="coinbase-button" data-code="{{order.button.id}}" data-button-style="none"></div>
-              <div class="detailer righty">
-                <h2>3h45m</h2>
-                <p>time remaining</p>
-              </div>
-            </div>
-          </li>
-        {{/compare}}
-      {{/each}}
-    </script>
-
+    <li class="centered">
+      <div class="running">
+        <div class="detailer lefty">
+          <h2>USD 5</h2>
+          <p>current prize</p>
+        </div>
+        <a href="#" class="bet" title="Bet the amount of Bitcoins you want!">bet now</a>
+        <div class="clickable">
+          <div class="coinbase-button" data-code="0a266904c3719eae646b8a1f87ffdccf"></div>
+          <div class="coinbase-button" data-code="0a266904c3719eae646b8a1f87ffdccf"></div>
+          <div class="coinbase-button" data-code="0a266904c3719eae646b8a1f87ffdccf"></div>
+          <div class="coinbase-button" data-code="0a266904c3719eae646b8a1f87ffdccf"></div>
+          <div class="coinbase-button" data-code="0a266904c3719eae646b8a1f87ffdccf"></div>
+        </div>
+        <div class="detailer righty">
+          <h2>3h45m</h2>
+          <p>time remaining</p>
+        </div>
+      </div>
+    </li>
   </ul>
 
   <div class="raffle-number">
     <ul>
       <li>bogg #1</li>
-      <li class="selected">bogg #2</li>
+      <li>bogg #2</li>
+      <li class="selected">bogg #3</li>
     </ul>
   </div>
 
@@ -56,7 +72,6 @@
   <a href="" class="raffle-control right">&nbsp;</a>
   <span class="raffle-shadow left">&nbsp;</span>
   <span class="raffle-shadow right">&nbsp;</span>
-
 </section>
 
 <section class="how-it-works">
@@ -100,16 +115,3 @@
     {{/if}}
   </script>
 </section>
-
-<script id="button" type="text/x-handlebars-template">
-    {{#each buttons}}
-      <div class="button-{{id}}">
-        <a href="#" class="bet" title="Bet the amount of Bitcoins you want!" data-code="{{id}}">bet now</a>
-        <div class="coinbase-button" data-code="{{id}}" data-button-style="none"></div>
-      </div>
-    {{/each}}
-  </script>
-
-<div class="button-repository">
-  
-</div>
